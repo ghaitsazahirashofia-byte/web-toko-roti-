@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bread sopiieww - Pages</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .pages-main {
+            padding: 20px 40px 40px 40px;
+        }
+        .pages-title {
+            font-size: 2rem;
+            color: #1a0f0a;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        .menu-card {
+            background-color: #fffaf5;
+            border: 1px solid #f2e3d5;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            text-decoration: none !important; /* Menghapus garis bawah */
+            color: #3e2723 !important;        /* Mengubah teks biru jadi cokelat */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: transform 0.2s;
+        }
+        .menu-card:hover {
+            transform: translateY(-4px);
+            border-color: #e67e22;
+        }
+        
+        .menu-image-container {
+            width: 150px;  /* Batas lebar kotak gambar */
+            height: 120px; /* Batas tinggi kotak gambar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .menu-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .menu-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0;
+            color: #2b1810;
+            text-decoration: none !important;
+        }
+        @media (max-width: 600px) {
+            .menu-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mockup-container">
+        
+        <header>
+            <div class="logo-container">
+                <img src="img/logo.jpeg" alt="Logo" class="logo-img">
+                <div class="logo-text">BREAD sopiieww</div>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="pages.html" class="active">Pages</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="search-icon"></div>
+        </header>
+
+        <main class="pages-main">
+            <h1 class="pages-title">Halaman Kami</h1>
+            
+            <div class="menu-grid">
+                
+                <a href="produk.html" class="menu-card">
+                    <div class="menu-image-container">
+                        <img src="img/roti.jpg" alt="Produk" class="menu-img">
+                    </div>
+                    <h3>Produk</h3>
+                </a>
+
+                <a href="keranjang.html" class="menu-card">
+                    <div class="menu-image-container">
+                        <img src="img/keranjang.jpg" alt="Keranjang" class="menu-img">
+                    </div>
+                    <h3>Keranjang</h3>
+                </a>
+
+                <a href="checkout.html" class="menu-card">
+                    <div class="menu-image-container">
+                        <img src="img/checkout.jpg" alt="Checkout" class="menu-img">
+                    </div>
+                    <h3>Checkout</h3>
+                </a>
+
+            </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

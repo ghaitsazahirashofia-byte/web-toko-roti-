@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fdfaf6; /* Latar belakang krem hangat */
+    color: #3e2723; /* Warna teks cokelat tua */
+}
+
+/* Header Navigasi */
+header {
+    background-color: #ffffff;
+    padding: 15px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f5ebe0;
+    
+    /* TAMBAHKAN DUA BARIS INI */
+    position: relative;
+    z-index: 100; 
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-box {
+    font-size: 1.5rem;
+    background: #d35400;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #d35400;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #5d4037;
+    font-weight: 600;
+}
+
+nav a.active, nav a:hover {
+    color: #e67e22;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Hero Banner Section */
+.hero-banner {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+
+.hero-banner h1 {
+    font-size: 3.5rem;
+    color: #1a0f0a;
+    margin-bottom: 10px;
+}
+
+.hero-banner p {
+    color: #705a51;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Gambar Placeholder Roti - bisa diganti gambar asli lewat HTML nanti */
+.banner-image-placeholder {
+    width: 100%;
+    max-width: 1100px;
+    height: 150px;
+    margin: 0 auto;
+    background: linear-gradient(to right, #e6b89c, #ece0d1);
+    border-radius: 15px;
+}
+
+/* Kontainer Utama Dua Kolom */
+.contact-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+}
+
+/* Bagian Kiri: Grid Kartu */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #fff8f3;
+    border: 1px solid #f7e6d7;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.02);
+}
+
+.info-card .icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #1a0f0a;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    color: #705a51;
+    line-height: 1.4;
+}
+
+/* Bagian Kanan: Form input */
+.contact-form-section h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1a0f0a;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d7ccc8;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #e67e22;
+}
+
+/* Tombol Kirim Oranye */
+.send-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 14px 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.send-btn:hover {
+    background-color: #d35400;
+}
+
+/* Responsif Layar HP */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    header {
+        padding: 15px 20px;
+    }
+}
+/* Mengatur ukuran gambar logo agar rapi di header */
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Mengatur gambar banner roti panjang di tengah */
+.banner-img {
+    width: 100%;
+    max-width: 950px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 15px auto 0 auto;
+    display: block;
+}
+/* Pembungkus Utama berbentuk Kotak Melengkung seperti Mock-up */
+.mockup-container {
+    max-width: 950px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 25px; /* Membuat sudut luar kotak melengkung bulat */
+    border: 1px solid #e1d3c1;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.05);
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+/* Judul halaman */
+.page-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2b1810;
+    margin: 20px 0;
+}
+
+/* Penataan Grid Hero (Gambar di kiri, teks di kanan) */
+.hero-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    background-color: #fffaf5;
+    margin: 0 40px 40px 40px;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #f9ebd9;
+    align-items: center;
+}
+
+.hero-image-box img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.hero-text-box h2 {
+    font-size: 1.8rem;
+    color: #2b1810;
+    margin-bottom: 10px;
+}
+
+.hero-text-box p {
+    color: #6e5d55;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Tombol Oranye */
+.btn-shop {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Seksi Produk Populer di bawah */
+.section-title {
+    text-align: center;
+    color: #2b1810;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.product-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 40px;
+}
+
+.mini-item {
+    text-align: center;
+}
+
+.img-wrapper {
+    background-color: #ffffff;
+    border: 1px solid #ebdcd0;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.mini-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a3728;
+}
+/* Penata Jarak Konten Halaman Pages */
+.pages-main {
+    padding: 20px 40px 40px 40px;
+}
+
+.pages-title {
+    font-size: 2rem;
+    color: #1a0f0a;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Membuat Grid 2 Kolom Kanan-Kiri */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* Desain Kotak Menu Utama */
+.menu-card {
+    background-color: #fffaf5; /* Warna krem soft sesuai mock-up */
+    border: 1px solid #f2e3d5;
+    border-radius: 20px;       /* Membuat sudut kotak melengkung bulat */
+    padding: 40px 20px;
+    text-align: center;
+    text-decoration: none;     /* Menghilangkan garis bawah link text */
+    color: #3e2723;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+}
+
+/* Efek interaktif saat mouse diarahkan ke kotak */
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.08);
+    border-color: #e67e22;
+}
+
+/* Desain Ikon di Dalam Kotak */
+.menu-card .menu-icon {
+    font-size: 3.5rem; /* Ukuran emoji besar */
+}
+
+.menu-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2b1810;
+}
+
+/* Responsif Layar HP/Kecil agar otomatis menjadi 1 kolom kebawah */
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    .pages-main {
+        padding: 20px;
+    }
+}
+/* Kontainer pembungkus gambar di halaman pages */
+.menu-image-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Mengatur foto di dalam kotak menu */
+.menu-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Memastikan gambar pas dan tidak terpotong gepeng */
+}

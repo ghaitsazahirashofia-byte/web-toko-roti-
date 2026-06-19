@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bread sopiieww - Produk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-main {
+            padding: 20px 40px 40px 40px;
+        }
+        /* Detail Produk Atas */
+        .product-detail-container {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 40px;
+            background-color: #fffaf5;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #f2e3d5;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .product-large-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            background-color: #ffffff;
+            border: 1px solid #ebdcd0;
+        }
+        .product-info h1 {
+            font-size: 2.2rem;
+            color: #2b1810;
+            margin: 0 0 10px 0;
+        }
+        .product-price {
+            font-size: 1.6rem;
+            color: #e67e22;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        /* Penata Tombol Kuantitas & Tambah */
+        .purchase-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .quantity-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ebdcd0;
+            border-radius: 20px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+        .quantity-btn {
+            background: none;
+            border: none;
+            width: 35px;
+            height: 35px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #4a3728;
+            font-weight: bold;
+        }
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2b1810;
+            outline: none;
+        }
+        .btn-add-cart {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-add-cart:hover {
+            background-color: #d35400;
+        }
+        .product-desc h3 {
+            font-size: 1.1rem;
+            color: #2b1810;
+            margin: 0 0 8px 0;
+        }
+        .product-desc p {
+            color: #6e5d55;
+            line-height: 1.6;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        /* Seksi Bawah: Produk Terbaru */
+        .recent-title {
+            text-align: center;
+            color: #2b1810;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .recent-item {
+            text-align: center;
+        }
+        .recent-img-box {
+            background-color: #ffffff;
+            border: 1px solid #ebdcd0;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110px;
+        }
+        .recent-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .recent-item span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #4a3728;
+            margin-bottom: 2px;
+        }
+        .recent-price {
+            font-size: 0.85rem;
+            color: #e67e22;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .product-detail-container { grid-template-columns: 1fr; gap: 20px; }
+            .recent-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mockup-container">
+        
+        <header>
+            <div class="logo-container">
+                <img src="img/logo.jpeg" alt="Logo" class="logo-img">
+                <div class="logo-text">BREAD TALE</div>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="pages.html" class="active">Pages</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="search-icon"></div>
+        </header>
+
+        <main class="product-main">
+            
+            <div class="product-detail-container">
+                <div class="product-image-box">
+                    <img src="img/roti.jpg" alt="Roti Cokelat" class="product-large-img" id="main-product-img">
+            </div>
+                
+                <div class="product-info">
+                    <h1 id="main-product-title">Roti Cokelat</h1>
+
+                    <div class="product-price" id="main-product-price">Rp 28.000</div>
+                    
+                </div>
+                    
+                    <div class="purchase-actions">
+                        <div class="quantity-wrapper">
+                            <button class="quantity-btn" onclick="changeQty(-1)">-</button>
+                            <input type="text" class="quantity-input" id="qty" value="1" readonly>
+                            <button class="quantity-btn" onclick="changeQty(1)">+</button>
+                        </div>
+                        <button class="btn-add-cart" onclick="tambahKeKeranjangReal()">Tambahkan</button>
+                    </div>
+
+                    <div class="product-desc">
+                        <h3>Deskripsi</h3>
+                        <p>Roti cokelat lembut dengan isian cokelat premium.</p>
+                    </div>
+                </div>
+            </div>
+            <section class="recent-section">
+                <h3 class="recent-title" style="text-align: center; color: #2b1810; font-size: 1.3rem; margin: 40px 0 10px 0; font-weight: bold;">
+                    Produk Terbaru
+                </h3>
+
+           <div class="recent-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px 20px; margin-top: 20px;">
+                    
+                    <div class="recent-item" style="cursor: pointer;" onclick="updateProduct('img/roti.jpg', 'Roti Tawar', 'Rp 18.000')">
+                        <div class="recent-img-box"><img src="img/roti tawar.jpg" alt="Roti Tawar"></div>
+                        <span>Roti Tawar</span>
+                        <div class="recent-price">Rp 18.000</div>
+                    </div>
+                    
+                    <div class="recent-item" style="cursor: pointer;" onclick="updateProduct('img/croissant.jpg', 'Croissant', 'Rp 25.000')">
+                        <div class="recent-img-box"><img src="img/croissant.jpg" alt="Croissant"></div>
+                        <span>Croissant</span>
+                        <div class="recent-price">Rp 25.000</div>
+                    </div>
+                    
+                    <div class="recent-item" style="cursor: pointer;" onclick="updateProduct('img/waffle.jpg', 'Waffle', 'Rp 22.000')">
+                        <div class="recent-img-box"><img src="img/waffle.jpg" alt="Waffle"></div>
+                        <span>Waffle</span>
+                        <div class="recent-price">Rp 22.000</div>
+                    </div>
+                    
+                    <div class="recent-item" style="cursor: pointer;" onclick="updateProduct('img/donat.jpg', 'Donat', 'Rp 15.000')">
+                        <div class="recent-img-box"><img src="img/donat.jpg" alt="Donat"></div>
+                        <span>Donat</span>
+                        <div class="recent-price">Rp 15.000</div>
+                    </div>
+
+                </div>
+
+                    <div class="recent-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px 20px; margin-top: 20px;">
+                    
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/fruit tart.jpg', 'fruit Tart', 'Rp 18.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/Fruit tart.jpg" alt="Fruit Tart" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Fruit Tart</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 18.000</div>
+                    </div>
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/croissant.jpg', 'Croissant', 'Rp 25.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/pie.jpg" alt="pie" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Pie</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 25.000</div>
+                    </div>
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/waffle.jpg', 'Waffle', 'Rp 22.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/roti rustic.jpg" alt="Roti Rustic" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Roti Rustic</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 22.000</div>
+                    </div>
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/donat.jpg', 'Donat', 'Rp 15.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/roti gandum.jpg" alt="Donat" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Roti Gandum</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 15.000</div>
+                    </div>
+
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/cokies.jpg', 'Cookies Premium', 'Rp 20.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/cokies.jpg" alt="Cookies" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Cookies Premium</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 20.000</div>
+                    </div>
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/danish pastry.jpg', 'Danish Pastry', 'Rp 27.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/danish pastry.jpg" alt="Danish Pastry" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Danish Pastry</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 27.000</div>
+                    </div>
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/banner.jpeg', 'Roti Gandum', 'Rp 24.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/strawberry tart.jpg" alt="Roti Gandum" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Strawberry tart</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 24.000</div>
+                    </div>
+                    <div class="recent-item" style="text-align: center; cursor: pointer;" onclick="updateProduct('img/roti.jpg', 'Roti Sobek', 'Rp 19.000')">
+                        <div class="recent-img-box" style="background-color: #ffffff; border: 1px solid #ebdcd0; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 110px;"><img src="img/lotus biscoff.jpg" alt="Roti Sobek" style="max-width:100%; max-height:100%; object-fit:contain;"></div>
+                        <span style="display: block; font-size: 0.9rem; font-weight: bold; color: #4a3728; margin-bottom: 2px;">Lotus Biscoff</span>
+                        <div class="recent-price" style="font-size: 0.85rem; color: #e67e22; font-weight: bold;">Rp 19.000</div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+// Fungsi untuk mengubah kuantitas tombol plus-minus
+function changeQty(amount) {
+    var qtyInput = document.getElementById('qty');
+    var currentQty = parseInt(qtyInput.value);
+    var newQty = currentQty + amount;
+    if (newQty >= 1) {
+        qtyInput.value = newQty;
+    }
+}
+
+// FUNGSI BARU: Untuk mengubah data produk utama saat diklik
+function updateProduct(imgSrc, title, price) {
+    document.getElementById('main-product-img').src = imgSrc;
+    document.getElementById('main-product-title').innerText = title;
+    document.getElementById('main-product-price').innerText = price;
+}
+
+// FUNGSI UTAMA: Menyimpan ke keranjang belanja nyata
+function tambahKeKeranjangReal() {
+    const namaProd = document.getElementById('main-product-title').innerText;
+    const hargaProd = document.getElementById('main-product-price').innerText;
+    const imgProd = document.getElementById('main-product-img').getAttribute('src');
+    const jumlahProd = parseInt(document.getElementById('qty').value);
+
+    // 1. Ambil list keranjang yang sudah ada, jika belum ada buat array kosong []
+    let listKeranjang = JSON.parse(localStorage.getItem('produkKeranjangReal')) || [];
+
+    // 2. Cek apakah produk ini sudah pernah dimasukkan sebelumnya
+    const indeksProdukSama = listKeranjang.findIndex(item => item.nama === namaProd);
+
+    if (indeksProdukSama >= 0) {
+        // Jika produk sudah ada di keranjang, cukup tambahkan jumlahnya saja
+        listKeranjang[indeksProdukSama].jumlah += jumlahProd;
+    } else {
+        // Jika produk baru, masukkan sebagai item baru ke dalam list
+        listKeranjang.push({
+            nama: namaProd,
+            harga: hargaProd,
+            img: imgProd,
+            jumlah: jumlahProd
+        });
+    }
+
+    // 3. Simpan kembali daftar belanja terbaru ke memori browser
+    localStorage.setItem('produkKeranjangReal', JSON.stringify(listKeranjang));
+
+    // Pindah ke halaman keranjang
+    window.location.href = 'keranjang.html';
+}
+</script>
+</body>
+</html>

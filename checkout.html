@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sopii Bread - Checkout</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="mockup-container" style="max-width: 950px; margin: 20px auto; background-color: #fffaf5; border: 2px solid #ebdcd0; border-radius: 20px; padding: 20px; font-family: sans-serif;">
+        
+        <header style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid #ebdcd0; margin-bottom: 25px;">
+            <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+                <img src="img/logo.jpeg" alt="Logo" style="width: 40px; height: 40px; border-radius: 5px;">
+                <div style="font-weight: bold; color: #4a3728;">BREAD TALE</div>
+            </div>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="text-decoration: none; color: #4a3728;">Home</a>
+                <a href="pages.html" style="text-decoration: none; color: #4a3728;">Pages</a>
+                <a href="checkout.html" style="text-decoration: none; color: #e67e22; font-weight: bold;">Checkout</a>
+            </nav>
+            <div></div>
+        </header>
+
+        <main>
+            <h2 style="color: #2b1810; margin-bottom: 20px; font-size: 1.4rem;">Checkout</h2>
+
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr 1.1fr; gap: 20px; background-color: #fff; padding: 25px; border-radius: 15px; border: 1px solid #ebdcd0;">
+                
+                <div style="border-right: 1px solid #f3eae1; padding-right: 20px;">
+                    <h3 style="font-size: 1rem; color: #2b1810; margin-top: 0; margin-bottom: 15px;">Informasi Pengiriman</h3>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <input type="text" id="buyerName" placeholder="Andi Pratama" style="width: 100%; padding: 10px 15px; border: 1px solid #ebdcd0; border-radius: 20px; box-sizing: border-box; background-color: #fffaf5; color: #4a3728;">
+                    </div>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <input type="text" id="buyerPhone" placeholder="0812-3456-7890" style="width: 100%; padding: 10px 15px; border: 1px solid #ebdcd0; border-radius: 20px; box-sizing: border-box; background-color: #fffaf5; color: #4a3728;">
+                    </div>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <input type="text" id="buyerAddress" placeholder="Jl. Roti Enak No. 25, Bandung" style="width: 100%; padding: 10px 15px; border: 1px solid #ebdcd0; border-radius: 20px; box-sizing: border-box; background-color: #fffaf5; color: #4a3728;">
+                    </div>
+                    
+                    <div>
+                        <select id="buyerProvince" style="width: 100%; padding: 10px 15px; border: 1px solid #ebdcd0; border-radius: 20px; box-sizing: border-box; background-color: #fffaf5; color: #4a3728;">
+                            <option>Banda Aceh</option>
+                            <option>Nagan Raya</option>
+                            <option>Jawa Tengah</option>
+                            <option>Jawa Timur</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="border-right: 1px solid #f3eae1; padding-right: 20px; padding-left: 10px;">
+                    <h3 style="font-size: 1rem; color: #2b1810; margin-top: 0; margin-bottom: 15px;">Metode Pembayaran</h3>
+                    
+                    <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; color: #4a3728; cursor: pointer;">
+                        <input type="radio" name="payment" value="Transfer Bank" checked style="accent-color: #e67e22; transform: scale(1.2);">
+                        <span>Transfer Bank</span>
+                    </label>
+                    
+                    
+                    <label style="display: flex; align-items: center; gap: 10px; color: #4a3728; cursor: pointer;">
+                        <input type="radio" name="payment" value="COD" style="accent-color: #e67e22; transform: scale(1.2);">
+                        <span>COD</span>
+                    </label>
+                </div>
+
+                <div style="padding-left: 10px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="font-size: 1rem; color: #2b1810; margin-top: 0; margin-bottom: 15px;">Ringkasan Pesanan</h3>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem; color: #4a3728;">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">Rp 0</span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.95rem; color: #4a3728;">
+                            <span>Ongkir</span>
+                            <span>Rp 10.000</span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; border-top: 1px dashed #ebdcd0; padding-top: 15px; margin-bottom: 25px;">
+                            <span style="color: #2b1810;">Total</span>
+                            <span id="checkout-total" style="color: #e67e22;">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <button onclick="bayarSekarang()" style="width: 100%; background-color: #e67e22; color: #fff; border: none; padding: 14px; border-radius: 25px; font-weight: bold; font-size: 1rem; cursor: pointer;">
+                        Bayar Sekarang
+                    </button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function hitungCheckoutDinamis() {
+            const dataLocal = localStorage.getItem('produkKeranjangReal');
+            let totalSubtotalAll = 0;
+
+            if (dataLocal) {
+                const listItem = JSON.parse(dataLocal);
+                listItem.forEach(item => {
+                    let angkaHarga = parseInt(item.harga.replace(/[^0-9]/g, ''));
+                    totalSubtotalAll += (angkaHarga * item.jumlah);
+                });
+            }
+            
+            document.getElementById('checkout-subtotal').innerText = 'Rp ' + totalSubtotalAll.toLocaleString('id-ID');
+            let totalAkhir = totalSubtotalAll > 0 ? (totalSubtotalAll + 10000) : 0; // Ditambah Ongkir 10rb
+            document.getElementById('checkout-total').innerText = 'Rp ' + totalAkhir.toLocaleString('id-ID');
+        }
+
+        function bayarSekarang() {
+            // ⚠️ Ganti string di bawah ini dengan nomor WhatsApp tokomu sendiri (format angka tanpa spasi/plus)
+            const nomorPenjual = "6282237973942"; 
+
+            // Mengambil input data pelanggan
+            const nama = document.getElementById("buyerName")?.value || "";
+            const noHp = document.getElementById("buyerPhone")?.value || "";
+            const alamat = document.getElementById("buyerAddress")?.value || "";
+            const provinsi = document.getElementById("buyerProvince")?.value || "";
+            
+            // Mengambil opsi metode pembayaran radio button yang dipilih
+            const metodePembayaran = document.querySelector('input[name="payment"]:checked')?.value || "Transfer";
+
+            // Validasi kelengkapan form
+            if (!nama || !noHp || !alamat) {
+                alert("Harap lengkapi Informasi Pengiriman terlebih dahulu!");
+                return;
+            }
+
+            // Mengambil data keranjang asli dari localStorage
+            const dataLocal = localStorage.getItem('produkKeranjangReal');
+            let detailPesanan = "";
+            let totalSubtotalAll = 0;
+
+            if (dataLocal) {
+                const listItem = JSON.parse(dataLocal);
+                listItem.forEach(item => {
+                    detailPesanan += `• ${item.jumlah}x ${item.nama} (${item.harga})\n`;
+                    let angkaHarga = parseInt(item.harga.replace(/[^0-9]/g, ''));
+                    totalSubtotalAll += (angkaHarga * item.jumlah);
+                });
+            } else {
+                alert("Keranjang belanja kosong! Tidak ada produk untuk di-checkout.");
+                return;
+            }
+
+            let totalAkhir = totalSubtotalAll + 10000; // Hitung total akhir pesanan + ongkir 10rb
+
+            // Menyusun format template teks ke WhatsApp
+            const isiPesan = `*PESANAN BARU (FOR PICKUP)* 🥖🍰
+
+*Data Pembeli:*
+• Nama: ${nama}
+• No. HP: ${noHp}
+• Wilayah: ${provinsi}
+• Alamat Lengkap: ${alamat}
+
+*Detail Produk Yang Dibeli:*
+${detailPesanan}
+• Ongkos Kirim: Rp 10.000
+*Total Pembayaran:* Rp ${totalAkhir.toLocaleString('id-ID')}
+
+*Metode Pembayaran:* ${metodePembayaran}
+
+Mohon segera dikonfirmasi dan diproses ya Min, terima kasih banyak!`;
+
+            // Membuat link kirim otomatis WhatsApp Click to Chat API
+            const urlWhatsApp = `https://wa.me/${nomorPenjual}?text=${encodeURIComponent(isiPesan)}`;
+            
+            // Buka aplikasi WhatsApp di tab baru browser pembeli
+            window.open(urlWhatsApp, '_blank');
+
+            // Hapus/bersihkan isi keranjang belanjaan lokal setelah checkout berhasil terkirim
+            localStorage.removeItem('produkKeranjangReal');
+            
+            // Alihkan pembeli kembali ke halaman utama toko roti
+            window.location.href = 'index.html';
+        }
+
+        // Picu penghitungan harga otomatis saat halaman checkout dibuka pembeli
+        window.onload = hitungCheckoutDinamis;
+    </script>
+
+</body>
+</html>
